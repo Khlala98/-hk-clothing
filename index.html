@@ -610,20 +610,10 @@
           <div class="section-header fade-up">
             <h2>Bienvenue chez <em>H&K Clothing</em></h2>
           </div>
-          <div class="fade-up" style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;max-width:960px;margin:0 auto;box-shadow:0 8px 32px rgba(0,0,0,0.1);">
-            <video autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=960&q=80" style="width:100%;height:100%;object-fit:cover;">
-              <source src="https://cdn.coverr.co/videos/coverr-woman-looking-at-clothes-in-a-store-1584/1080p.mp4" type="video/mp4">
-              <source src="https://cdn.coverr.co/videos/coverr-a-woman-browsing-through-clothes-7711/1080p.mp4" type="video/mp4">
-              <source src="https://static.videezy.com/system/resources/previews/000/041/988/original/Fashion-Store.mp4" type="video/mp4">
+          <div class="fade-up">
+            <video autoplay muted loop playsinline preload="auto" style="width:100%;border-radius:16px;aspect-ratio:16/9;object-fit:cover;max-width:960px;margin:0 auto;display:block;">
+              <source src="https://videos.pexels.com/video-files/3753716/3753716-uhd_2560_1440_25fps.mp4" type="video/mp4">
             </video>
-            <div id="video-fallback" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;background:url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=960&q=80') center/cover;z-index:1;">
-              <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;">
-                <a href="https://www.instagram.com/hkclothing03/" target="_blank" rel="noopener" style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;text-decoration:none;">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="#D4A574"><polygon points="9,6 9,18 18,12"/></svg>
-                </a>
-                <p style="color:white;margin-top:16px;font-size:16px;font-family:var(--font-title);">Voir nos vidéos sur Instagram</p>
-              </div>
-            </div>
           </div>
           <div class="fade-up" style="text-align:center;margin-top:24px;">
             <a href="https://www.instagram.com/hkclothing03/" target="_blank" rel="noopener" class="btn btn--accent" style="padding:14px 32px;font-size:14px;">
@@ -1474,20 +1464,7 @@
         var chatbotConseil = document.getElementById('chatbot-conseil');
         if (chatbotConseil) chatbotConseil.href = waConseilURL;
 
-        /* Video fallback */
-        var vid = document.querySelector('.video-section video');
-        if (vid) {
-          vid.addEventListener('error', function() {
-            var fb = document.getElementById('video-fallback');
-            if (fb) fb.style.display = 'block';
-          }, true);
-          setTimeout(function() {
-            if (vid.readyState === 0) {
-              var fb = document.getElementById('video-fallback');
-              if (fb) fb.style.display = 'block';
-            }
-          }, 5000);
-        }
+
 
         /* Marquee */
         const marqueeItems = ['Robes', 'Caftans', 'Blazers', 'Abayas', 'Pantalons', 'Ensembles', 'Tops', 'Jupes'];

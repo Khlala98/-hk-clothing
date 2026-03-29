@@ -348,6 +348,34 @@
     .whatsapp-float__btn { width: 52px; height: 52px; border-radius: 50%; background: var(--whatsapp); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.3); transition: background var(--transition); }
     .whatsapp-float__btn:hover { background: var(--whatsapp-dark); }
 
+    /* ===== CHATBOT WIDGET ===== */
+    .chatbot-trigger { position: fixed; bottom: 24px; left: 24px; z-index: 900; }
+    .chatbot-trigger__btn { display: inline-flex; align-items: center; gap: 8px; background: var(--dark); color: #fff; padding: 12px 20px; border-radius: 50px; font-size: 14px; font-weight: 500; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.15); transition: all var(--transition); }
+    .chatbot-trigger__btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
+    .chatbot-widget { position: fixed; bottom: 88px; left: 24px; z-index: 901; width: 360px; max-height: 480px; background: #fff; border-radius: 20px; box-shadow: 0 12px 48px rgba(0,0,0,0.15); display: flex; flex-direction: column; opacity: 0; transform: translateY(20px) scale(0.95); pointer-events: none; transition: opacity 0.4s ease-out, transform 0.4s ease-out; overflow: hidden; }
+    .chatbot-widget--open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .chatbot-widget__header { background: var(--dark); color: #fff; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .chatbot-widget__header-left { display: flex; align-items: center; gap: 12px; }
+    .chatbot-widget__avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--gold)); display: flex; align-items: center; justify-content: center; font-family: var(--font-title); font-weight: 700; font-size: 12px; color: #fff; flex-shrink: 0; }
+    .chatbot-widget__title { font-family: var(--font-title); font-size: 16px; font-weight: 400; letter-spacing: 0.05em; }
+    .chatbot-widget__subtitle { font-size: 11px; opacity: 0.6; }
+    .chatbot-widget__close { background: none; border: none; color: #fff; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background var(--transition); }
+    .chatbot-widget__close:hover { background: rgba(255,255,255,0.15); }
+    .chatbot-widget__body { padding: 20px; flex: 1; overflow-y: auto; }
+    .chatbot-widget__bubble { background: var(--cream); border-radius: 16px 16px 16px 4px; padding: 16px; font-size: 14px; line-height: 1.6; color: var(--text); margin-bottom: 16px; }
+    .chatbot-widget__options { display: flex; flex-direction: column; gap: 8px; }
+    .chatbot-widget__option { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--accent-light); background: #fff; font-size: 13px; font-weight: 500; color: var(--text); cursor: pointer; transition: all var(--transition); text-decoration: none; }
+    .chatbot-widget__option:hover { background: var(--cream); border-color: var(--accent); transform: translateX(4px); }
+    .chatbot-widget__footer { padding: 12px 16px; border-top: 1px solid rgba(0,0,0,0.06); display: flex; gap: 8px; }
+    .chatbot-widget__input { flex: 1; border: 1px solid var(--accent-light); border-radius: 50px; padding: 10px 16px; font-size: 13px; font-family: var(--font-body); outline: none; transition: border-color var(--transition); }
+    .chatbot-widget__input:focus { border-color: var(--accent); }
+    .chatbot-widget__send { width: 38px; height: 38px; border-radius: 50%; background: var(--whatsapp); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background var(--transition); flex-shrink: 0; }
+    .chatbot-widget__send:hover { background: var(--whatsapp-dark); }
+    @media (max-width: 768px) {
+      .chatbot-widget { left: 12px; right: 12px; width: auto; bottom: 80px; }
+      .chatbot-trigger { bottom: 20px; left: 12px; }
+    }
+
     /* ===== FOOTER ===== */
     .site-footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 80px 0 0; border-top: 1px solid rgba(255,255,255,0.08); }
     .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 48px; }
@@ -573,7 +601,7 @@
             <h2>Bienvenue chez <em>H&K Clothing</em></h2>
           </div>
           <div class="fade-up" style="max-width: 800px; margin: 0 auto;">
-            <iframe src="https://www.youtube.com/embed/9xwazD5SyVg" title="Vidéo H&K Clothing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; aspect-ratio: 16/9; border: none; border-radius: 16px; display: block;"></iframe>
+            <iframe src="https://www.youtube.com/embed/lbGkERbP9Fo" title="Vidéo H&K Clothing — Boutique de mode" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; aspect-ratio: 16/9; border: none; border-radius: 16px; display: block;" onerror="this.src='https://www.youtube.com/embed/Dlh-dzB2U4Y'"></iframe>
           </div>
           <p class="video-caption fade-up">Visitez notre boutique au cœur de Casablanca — Quartier Les Princesses, Rue Socrate</p>
         </div>
@@ -773,15 +801,18 @@
             <div class="section-header fade-up">
               <h3 style="font-size: 28px;">Comment nous trouver</h3>
             </div>
-            <div class="video-container fade-up">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8!2d-7.5898!3d33.5731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCasablanca%2C+Maroc!5e0!3m2!1sfr!2sma!4v1" title="Localisation H&K Clothing — Casablanca" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none; border-radius: var(--radius-md);"></iframe>
-            </div>
-            <div style="text-align: center; margin-top: 16px;" class="fade-up">
-              <p style="color: var(--text-light); margin-bottom: 12px;">Quartier Les Princesses, Rue Socrate, Casablanca</p>
-              <a href="https://maps.google.com/?q=Quartier+Les+Princesses+Rue+Socrate+Casablanca+Maroc" target="_blank" rel="noopener" class="btn btn--outline maps-btn">
+            <div class="fade-up" style="background: var(--cream); border-radius: 20px; padding: 48px 32px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.04); max-width: 600px; margin: 0 auto;">
+              <div style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--gold)); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3 style="font-family: var(--font-title); font-size: 22px; font-weight: 400; margin-bottom: 12px; color: var(--text);">Notre adresse</h3>
+              <p style="color: var(--text-light); font-size: 15px; line-height: 1.7; margin-bottom: 8px;">5 Lotissement Arset Lekbir, RDC</p>
+              <p style="color: var(--text-light); font-size: 15px; line-height: 1.7; margin-bottom: 24px;">Quartier Les Princesses, Rue Socrate<br>Casablanca 20250, Maroc</p>
+              <a href="https://maps.google.com/?q=H%26K+CLOTHING+Casablanca+Maroc" target="_blank" rel="noopener" class="btn btn--accent" style="padding: 14px 32px;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                Ouvrir dans Google Maps
+                Voir sur Google Maps
               </a>
+            </div>
             </div>
           </div>
 
@@ -866,6 +897,49 @@
       <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
   </aside>
+
+  <!-- ===== CHATBOT WIDGET ===== -->
+  <div class="chatbot-trigger" id="chatbot-trigger">
+    <button class="chatbot-trigger__btn" onclick="toggleChatbot()" aria-label="Ouvrir le chat">
+      <span style="font-size:18px;">💬</span> Besoin d'aide ?
+    </button>
+  </div>
+  <div class="chatbot-widget" id="chatbot-widget" role="dialog" aria-label="Chat H&K Clothing">
+    <div class="chatbot-widget__header">
+      <div class="chatbot-widget__header-left">
+        <div class="chatbot-widget__avatar">H&K</div>
+        <div>
+          <div class="chatbot-widget__title">H&K Clothing</div>
+          <div class="chatbot-widget__subtitle">En ligne</div>
+        </div>
+      </div>
+      <button class="chatbot-widget__close" onclick="toggleChatbot()" aria-label="Fermer le chat">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="chatbot-widget__body">
+      <div class="chatbot-widget__bubble">
+        Bonjour ! 👋 Comment puis-je vous aider ?<br>Choisissez une option :
+      </div>
+      <div class="chatbot-widget__options">
+        <a class="chatbot-widget__option" id="chatbot-conseil" href="#" target="_blank" rel="noopener">
+          <span>📏</span> Conseil taille
+        </a>
+        <button class="chatbot-widget__option" onclick="toggleChatbot(); navigateTo('boutique');">
+          <span>🛍️</span> Voir la boutique
+        </button>
+        <button class="chatbot-widget__option" onclick="toggleChatbot(); navigateTo('contact');">
+          <span>📞</span> Nous contacter
+        </button>
+      </div>
+    </div>
+    <div class="chatbot-widget__footer">
+      <input type="text" class="chatbot-widget__input" id="chatbot-input" placeholder="Écrivez votre message..." onkeydown="if(event.key==='Enter')sendChatbotMsg()">
+      <button class="chatbot-widget__send" onclick="sendChatbotMsg()" aria-label="Envoyer sur WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
@@ -1344,6 +1418,20 @@
       });
     }
 
+    /* ===== CHATBOT ===== */
+    function toggleChatbot() {
+      var w = document.getElementById('chatbot-widget');
+      if (w) w.classList.toggle('chatbot-widget--open');
+    }
+    function sendChatbotMsg() {
+      var input = document.getElementById('chatbot-input');
+      var msg = input ? input.value.trim() : '';
+      if (!msg) return;
+      var url = 'https://wa.me/212672011146?text=' + encodeURIComponent('Bonjour H&K Clothing ! ' + msg);
+      window.open(url, '_blank');
+      if (input) input.value = '';
+    }
+
     /* ===== 13j. Initialisation ===== */
     document.addEventListener('DOMContentLoaded', function() {
       try {
@@ -1358,6 +1446,10 @@
         document.getElementById('footer-wa-link').href = waGenericURL;
         document.getElementById('contact-wa-btn').href = waGenericURL;
         document.getElementById('contact-social-wa').href = waGenericURL;
+
+        /* Chatbot — lien conseil taille */
+        var chatbotConseil = document.getElementById('chatbot-conseil');
+        if (chatbotConseil) chatbotConseil.href = waConseilURL;
 
         /* Marquee */
         const marqueeItems = ['Robes', 'Caftans', 'Blazers', 'Abayas', 'Pantalons', 'Ensembles', 'Tops', 'Jupes'];

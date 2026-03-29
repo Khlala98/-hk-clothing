@@ -242,13 +242,7 @@
     .video-caption { text-align: center; margin-top: 16px; color: var(--text-light); font-size: 14px; }
 
     /* ===== COLLECTIONS ===== */
-    .collections-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 24px; }
-    .collections-grid .collection-card:nth-child(4),
-    .collections-grid .collection-card:nth-child(5) { grid-column: span 1; }
-    .collections-grid--5 { grid-template-columns: repeat(6, 1fr); }
-    .collections-grid--5 .collection-card:nth-child(-n+3) { grid-column: span 2; }
-    .collections-grid--5 .collection-card:nth-child(4) { grid-column: 2 / span 2; }
-    .collections-grid--5 .collection-card:nth-child(5) { grid-column: 4 / span 2; }
+    .collections-grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 24px; }
     .collection-card { position: relative; aspect-ratio: 16/10; border-radius: 20px; overflow: hidden; cursor: pointer; transition: transform var(--transition), box-shadow var(--transition); }
     .collection-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
     .collection-card__bg { position: absolute; inset: 0; transition: filter 0.6s ease-out; background-size: cover; background-position: center; }
@@ -445,10 +439,7 @@
       .product-card__cta-mobile { display: flex; }
       .product-card:hover { transform: none; }
       .promises-grid { grid-template-columns: 1fr; }
-      .collections-grid, .collections-grid--5 { grid-template-columns: 1fr; }
-      .collections-grid--5 .collection-card:nth-child(-n+3),
-      .collections-grid--5 .collection-card:nth-child(4),
-      .collections-grid--5 .collection-card:nth-child(5) { grid-column: span 1; }
+      .collections-grid { grid-template-columns: 1fr; }
       .collection-card__btn { opacity: 1; transform: translateY(0); }
       .testimonials-grid { grid-template-columns: 1fr; }
       .insta-grid { grid-template-columns: repeat(2, 1fr); }
@@ -631,7 +622,7 @@
             <h2>Nos Collections</h2>
             <p>Découvrez nos univers mode soigneusement composés</p>
           </div>
-          <div class="collections-grid collections-grid--5" id="accueil-collections">
+          <div class="collections-grid" id="accueil-collections">
             <!-- Généré en JS -->
           </div>
         </div>
@@ -724,7 +715,7 @@
             <h2>Nos Collections</h2>
             <p>Des univers mode pensés pour sublimer chaque femme</p>
           </div>
-          <div class="collections-grid collections-grid--5" id="collections-grid">
+          <div class="collections-grid" id="collections-grid">
             <!-- Généré en JS -->
           </div>
         </div>
@@ -750,9 +741,8 @@
           </div>
           <div class="histoire-grid fade-up">
             <div class="histoire-text">
-              <p>Fondée au cœur de Casablanca, <strong>H&K Clothing</strong> est née d'une conviction simple : chaque femme mérite de se sentir belle et élégante, quelle que soit sa taille. Notre aventure a commencé avec le constat qu'au Maroc, les femmes rondes manquaient cruellement d'options mode à la hauteur de leur élégance naturelle.</p>
-              <p>Passionnées de mode inclusive, nous avons créé un espace où les tailles 42 à 60 ne sont pas une catégorie à part, mais le cœur même de notre collection. Chaque pièce — des caftans traditionnels aux blazers contemporains — est pensée pour sublimer les courbes avec des coupes étudiées et des tissus nobles.</p>
-              <p>Aujourd'hui, avec plus de 137 000 abonnées sur Instagram, H&K Clothing est devenue une référence de la mode grande taille au Maroc. Notre engagement reste le même : offrir à chaque cliente une expérience unique, un conseil personnalisé via WhatsApp, et des pièces qui transforment chaque jour en défilé.</p>
+              <p>Née à Casablanca, <strong>H&K Clothing</strong> est la destination mode des femmes qui veulent allier élégance et confort en grande taille. Du 42 au 60, chaque pièce est pensée pour sublimer.</p>
+              <p>Notre mission : prouver que le style n'a pas de taille. Des tissus nobles, des coupes flatteuses et un service personnalisé via WhatsApp.</p>
             </div>
             <div class="histoire-image" role="img" aria-label="Photo de la boutique H&K Clothing">
               <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80" alt="Intérieur de la boutique H&K Clothing à Casablanca" loading="lazy">
@@ -813,19 +803,18 @@
             <p>Nous sommes à votre écoute</p>
           </div>
 
-          <!-- Vidéo Adresse -->
+          <!-- Adresse visuelle -->
           <div style="margin-bottom: 48px;">
-            <div class="section-header fade-up">
-              <h3 style="font-size: 28px;">Comment nous trouver</h3>
-            </div>
-            <div class="fade-up" style="background: var(--bg-warm-deep); border-radius: 16px; padding: 40px 32px; text-align: center; max-width: 600px; margin: 0 auto;">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" style="margin: 0 auto 20px; display: block;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <h3 style="font-family: var(--font-title); font-size: 22px; font-weight: 400; margin-bottom: 16px; color: var(--text);">Notre boutique</h3>
-              <p style="color: var(--text-light); font-size: 15px; line-height: 1.8; margin-bottom: 24px;">5 Lotissement Arset Lekbir, RDC<br>Quartier Les Princesses, Rue Socrate<br>Casablanca 20250, Maroc</p>
-              <a href="https://maps.google.com/?q=H%26K+CLOTHING+Casablanca+Maroc" target="_blank" rel="noopener" class="btn btn--accent" style="padding: 14px 32px;">
-                Ouvrir dans Google Maps <span style="margin-left:4px;">&rarr;</span>
-              </a>
-            </div>
+            <div class="fade-up" style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;max-width:800px;margin:0 auto;">
+              <img src="https://images.unsplash.com/photo-1569383746724-6f1b882b8f46?w=1200&q=80" alt="Casablanca" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;text-align:center;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <p style="color:#fff;font-family:var(--font-title);font-size:20px;font-weight:400;letter-spacing:0.05em;text-shadow:0 2px 8px rgba(0,0,0,0.3);">Quartier Les Princesses, Rue Socrate, Casablanca</p>
+                <p style="color:rgba(255,255,255,0.7);font-size:14px;">5 Lotissement Arset Lekbir, RDC — Casablanca 20250</p>
+                <a href="https://maps.google.com/?q=H%26K+CLOTHING+Casablanca+Maroc" target="_blank" rel="noopener" class="btn btn--accent" style="padding:14px 32px;margin-top:8px;">
+                  Voir l'itinéraire sur Google Maps <span style="margin-left:4px;">&rarr;</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -1023,11 +1012,10 @@
     ];
 
     const collections = [
-      { nom: 'Ramadan', sousTitre: 'Collection Spéciale', pieces: 20, gradient: 'linear-gradient(135deg, #C4956A, #2C2420)', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80' },
+      { nom: 'Jellaba & Caftan', sousTitre: 'Collection Traditionnelle', pieces: 20, gradient: 'linear-gradient(135deg, #C4956A, #2C2420)', image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&q=80' },
       { nom: 'Été', sousTitre: 'Collection Été 2026', pieces: 28, gradient: 'linear-gradient(135deg, #E8D5C0, #D4A574)', image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80' },
       { nom: 'Demi-saison', sousTitre: 'Printemps-Automne', pieces: 24, gradient: 'linear-gradient(135deg, #B8895A, #F0E6D8)', image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80' },
-      { nom: 'Hiver', sousTitre: 'Collection Hiver 2026', pieces: 22, gradient: 'linear-gradient(135deg, #2C2420, #8B7E74)', image: 'https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?w=800&q=80' },
-      { nom: 'Printemps', sousTitre: 'Nouvelle Collection', pieces: 26, gradient: 'linear-gradient(135deg, #D4A574, #FFF9F4)', image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80' }
+      { nom: 'Hiver', sousTitre: 'Collection Hiver 2026', pieces: 22, gradient: 'linear-gradient(135deg, #2C2420, #8B7E74)', image: 'https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?w=800&q=80' }
     ];
 
     const temoignages = [

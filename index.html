@@ -66,35 +66,35 @@
       },
       {
         "@type": "Product", "name": "Robe Casablanca Dorée", "brand": {"@type": "Brand", "name": "H&K Clothing"},
-        "offers": {"@type": "Offer", "price": "890", "priceCurrency": "MAD", "availability": "https://schema.org/InStock"}
+        "offers": {"@type": "Offer", "price": "890", "priceCurrency": "DHS", "availability": "https://schema.org/InStock"}
       },
       {
         "@type": "Product", "name": "Blazer Marrakech", "brand": {"@type": "Brand", "name": "H&K Clothing"},
-        "offers": {"@type": "Offer", "price": "1250", "priceCurrency": "MAD", "availability": "https://schema.org/InStock"}
+        "offers": {"@type": "Offer", "price": "1250", "priceCurrency": "DHS", "availability": "https://schema.org/InStock"}
       },
       {
         "@type": "Product", "name": "Pantalon Palace", "brand": {"@type": "Brand", "name": "H&K Clothing"},
-        "offers": {"@type": "Offer", "price": "650", "priceCurrency": "MAD", "availability": "https://schema.org/InStock"}
+        "offers": {"@type": "Offer", "price": "650", "priceCurrency": "DHS", "availability": "https://schema.org/InStock"}
       },
       {
         "@type": "Product", "name": "Caftan Moderne H&K", "brand": {"@type": "Brand", "name": "H&K Clothing"},
-        "offers": {"@type": "Offer", "price": "1890", "priceCurrency": "MAD", "availability": "https://schema.org/InStock"}
+        "offers": {"@type": "Offer", "price": "1890", "priceCurrency": "DHS", "availability": "https://schema.org/InStock"}
       },
       {
         "@type": "Product", "name": "Ensemble Rabat Chic", "brand": {"@type": "Brand", "name": "H&K Clothing"},
-        "offers": {"@type": "Offer", "price": "1450", "priceCurrency": "MAD", "availability": "https://schema.org/InStock"}
+        "offers": {"@type": "Offer", "price": "1450", "priceCurrency": "DHS", "availability": "https://schema.org/InStock"}
       },
       {
         "@type": "Product", "name": "Tunique Essaouira", "brand": {"@type": "Brand", "name": "H&K Clothing"},
-        "offers": {"@type": "Offer", "price": "490", "priceCurrency": "MAD", "availability": "https://schema.org/InStock"}
+        "offers": {"@type": "Offer", "price": "490", "priceCurrency": "DHS", "availability": "https://schema.org/InStock"}
       },
       {
         "@type": "Product", "name": "Abaya Luxe Noire", "brand": {"@type": "Brand", "name": "H&K Clothing"},
-        "offers": {"@type": "Offer", "price": "2200", "priceCurrency": "MAD", "availability": "https://schema.org/InStock"}
+        "offers": {"@type": "Offer", "price": "2200", "priceCurrency": "DHS", "availability": "https://schema.org/InStock"}
       },
       {
         "@type": "Product", "name": "Jupe Tanger Flow", "brand": {"@type": "Brand", "name": "H&K Clothing"},
-        "offers": {"@type": "Offer", "price": "550", "priceCurrency": "MAD", "availability": "https://schema.org/InStock"}
+        "offers": {"@type": "Offer", "price": "550", "priceCurrency": "DHS", "availability": "https://schema.org/InStock"}
       }
     ]
   }
@@ -962,7 +962,7 @@
       const BASE = 'https://wa.me/212672011146?text=';
       const pd = productData || {};
       const messages = {
-        MSG_PRODUIT: 'Bonjour H&K Clothing ! \u{1F44B}\nJe suis intéressée par : ' + (pd.nom || '') + '\nTaille souhaitée : ' + (pd.taille || '') + '\nPrix affiché : ' + (pd.prix || '') + ' MAD\nMerci de me confirmer la disponibilité ! \u{1F64F}',
+        MSG_PRODUIT: 'Bonjour H&K Clothing ! \u{1F44B}\nJe suis intéressée par : ' + (pd.nom || '') + '\nTaille souhaitée : ' + (pd.taille || '') + '\nPrix affiché : ' + (pd.prix || '') + ' DHS\nMerci de me confirmer la disponibilité ! \u{1F64F}',
         MSG_GENERIQUE: 'Bonjour H&K Clothing ! Je souhaite des informations sur vos articles. Merci !',
         MSG_CONSEIL: 'Bonjour H&K Clothing ! J\'ai une question sur vos tailles. Pouvez-vous me conseiller ?'
       };
@@ -1030,7 +1030,7 @@
         '</div>' +
         '<div class="product-card__info">' +
           '<h3 class="product-card__name">' + product.nom + '</h3>' +
-          '<p class="product-card__price">' + product.prix.toLocaleString('fr-FR') + ' MAD</p>' +
+          '<p class="product-card__price">' + product.prix.toLocaleString('fr-FR') + ' DHS</p>' +
           '<div class="product-card__sizes">' + sizesHTML + '</div>' +
         '</div>' +
         '<button class="product-card__cta-mobile btn btn--accent" onclick="openModal(' + product.id + ')" aria-label="Commander ' + product.nom + '">Commander</button>' +
@@ -1156,7 +1156,7 @@
 
       document.getElementById('modal-emoji').textContent = modalProduct.emoji;
       document.getElementById('modal-name').textContent = modalProduct.nom;
-      document.getElementById('modal-price').textContent = modalProduct.prix.toLocaleString('fr-FR') + ' MAD';
+      document.getElementById('modal-price').textContent = modalProduct.prix.toLocaleString('fr-FR') + ' DHS';
 
       const sizesContainer = document.getElementById('modal-sizes');
       sizesContainer.innerHTML = '';

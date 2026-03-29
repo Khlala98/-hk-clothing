@@ -181,8 +181,10 @@
 
     /* ===== HERO ===== */
     .hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-    .hero__bg { position: absolute; inset: 0; background-color: #1A1614; background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1600&q=80'); background-size: cover, cover; background-position: center, center; background-repeat: no-repeat, no-repeat; animation: kenburns 20s ease-in-out alternate infinite; z-index: 0; }
-    .hero__content { position: relative; z-index: 1; text-align: center; color: #fff; padding: 24px; }
+    .hero__bg { position: absolute; inset: 0; z-index: 0; }
+    .hero__bg img { width: 100%; height: 100%; object-fit: cover; animation: kenburns 20s ease-in-out alternate infinite; }
+    .hero__overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1; }
+    .hero__content { position: relative; z-index: 2; text-align: center; color: #fff; padding: 24px; }
     .hero__title { font-size: 56px; font-weight: 700; margin-bottom: 16px; }
     .hero__title em { font-style: italic; color: var(--accent-light); }
     .hero__subtitle { font-size: 20px; color: rgba(255,255,255,0.8); margin-bottom: 24px; font-family: var(--font-body); }
@@ -487,7 +489,10 @@
 
       <!-- Hero -->
       <section class="hero" role="banner">
-        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__bg" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80" alt="Boutique de mode">
+        </div>
+        <div class="hero__overlay" aria-hidden="true"></div>
         <div class="hero__content">
           <h1 class="hero__title">La mode <em>sans limites</em> de taille</h1>
           <p class="hero__subtitle">Pour la femme simple, moderne et élégante</p>
@@ -563,15 +568,8 @@
           <div class="section-header fade-up">
             <h2>Bienvenue chez <em>H&K Clothing</em></h2>
           </div>
-          <div class="video-container fade-up" style="position: relative; cursor: pointer;" onclick="this.innerHTML='<iframe src=\'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1\' title=\'Vidéo H&amp;K Clothing\' allow=\'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\' allowfullscreen style=\'position: absolute; inset: 0; width: 100%; height: 100%; border: none; border-radius: var(--radius-md);\'></iframe>'">
-            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80" alt="Boutique H&K Clothing" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
-            <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,22,20,0.5), rgba(61,46,36,0.4)); z-index: 1;"></div>
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center;">
-              <div style="width: 80px; height: 80px; border-radius: 50%; background: rgba(212,165,116,0.85); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; transition: transform 0.3s, background 0.3s;" onmouseover="this.style.transform='scale(1.1)';this.style.background='var(--accent)'" onmouseout="this.style.transform='scale(1)';this.style.background='rgba(212,165,116,0.85)'">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><polygon points="9.5,7.5 16.5,12 9.5,16.5"/></svg>
-              </div>
-              <span style="color: #fff; font-family: var(--font-title); font-size: 20px; font-weight: 600; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">Vidéo bientôt disponible</span>
-            </div>
+          <div class="fade-up" style="max-width: 800px; margin: 0 auto;">
+            <iframe src="https://www.youtube.com/embed/9xwazD5SyVg" title="Vidéo H&K Clothing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; aspect-ratio: 16/9; border: none; border-radius: 16px; display: block;"></iframe>
           </div>
           <p class="video-caption fade-up">Visitez notre boutique au cœur de Casablanca — Quartier Les Princesses, Rue Socrate</p>
         </div>
